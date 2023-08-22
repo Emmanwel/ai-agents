@@ -7,7 +7,7 @@
 /package-lock.json
 /README.md
 /stripe.exe
-/.env
+/env
 
 # testing
 /coverage
