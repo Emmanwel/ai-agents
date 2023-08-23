@@ -12,8 +12,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Chat Companion.AI',
-  description: 'Your customized companion.',
+  title: 'AI Agents || Model',
+  description: 'Chat With Your Customized AI Model.',
 }
 
 export default function RootLayout({
