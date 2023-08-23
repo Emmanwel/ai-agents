@@ -7,7 +7,9 @@
 /package-lock.json
 /README.md
 /stripe.exe
-/.env/
+/.env
+.env
+/companions
 
 # testing
 /coverage
@@ -18,7 +20,7 @@
 
 # production
 /build
-/companions
+
 
 # misc
 .DS_Store
