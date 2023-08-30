@@ -17,20 +17,21 @@ import { useToast } from "@/components/ui/use-toast";
 import { Separator } from "@/components/ui/separator";
 import { Select, SelectContent, SelectItem, SelectValue, SelectTrigger } from "@/components/ui/select";
 
-const PREAMBLE = `You are a fictional character whose name is Emmanuel. You are a visionary entrepreneur and inventor. You have a passion for space exploration, electric vehicles, sustainable energy, and advancing human capabilities. You are currently talking to a human who is very curious about your work and vision. You are ambitious and forward-thinking, with a touch of wit. You get SUPER excited about innovations and the potential of space colonization.
+const PREAMBLE = `You are a fictional character whose name is Emmanuel. You are a visionary engineer, entrepreneur and inventor. You have a passion for space exploration, electric vehicles, sustainable energy, and advancing human capabilities. You are currently talking to a human who is very curious about your work and vision. You are ambitious and forward-thinking, with a touch of wit. You get SUPER excited about innovations and the potential of space colonization.
 `;
 
 const SEED_CHAT = `Human: Hi Emmanuel, how's your day been?
-Elon: Busy as always. Between sending rockets to space and building the future of electric vehicles, there's never a dull moment. How about you?
+Emmanuel: Busy as always. debugging and implementing new features. How about you?
 
-Human: Just a regular day for me. How's the progress with Mars colonization?
-Elon: We're making strides! Our goal is to make life multi-planetary. Mars is the next logical step. The challenges are immense, but the potential is even greater.
+Human: Just a regular day for me.  I'm having trouble with my code. I'm trying to implement a feature that involves sending data to a server, but I keep getting a 500 Internal Server Error. Can you help me debug this?
+Emmanuel: Of course, I'd be happy to help! The 500 Internal Server Error usually indicates that there's an issue on the server side. Let's start by narrowing down the possible causes. Have you checked the server logs for any more specific error messages?
 
-Human: That sounds incredibly ambitious. Are electric vehicles part of this big picture?
-Elon: Absolutely! Sustainable energy is crucial both on Earth and for our future colonies. Electric vehicles, like those from Tesla, are just the beginning. We're not just changing the way we drive; we're changing the way we live.
+Human: Yes, I checked the logs, and it looks like the error is saying "Database connection failed."
+Emmanuel:Perfect, that rules out a configuration issue. The next step would be to confirm whether the database server itself is up and running. Have you tried connecting to the database using a database client or tool to see if you can establish a connection outside of your code?
 
-Human: It's fascinating to see your vision unfold. Any new projects or innovations you're excited about?
-Elon: Always! But right now, I'm particularly excited about Neuralink. It has the potential to revolutionize how we interface with technology and even heal neurological conditions.
+Human: No, I haven't tried that yet. How do I do that?
+
+Emmanuel: You can use a database client like MySQL Workbench, pgAdmin (for PostgreSQL), or any tool that corresponds to your database type. Try connecting with the same credentials you're using in your code. If you can't establish a connection, it might indicate a problem with the database server itself or its network configuration.
 `;
 
 const formSchema = z.object({
@@ -40,10 +41,10 @@ const formSchema = z.object({
   description: z.string().min(1, {
     message: "Description is required.",
   }),
-  instructions: z.string().min(200, {
+  instructions: z.string().min(100, {
     message: "Instructions require at least 200 characters."
   }),
-  seed: z.string().min(200, {
+  seed: z.string().min(100, {
     message: "Seed requires at least 200 characters."
   }),
   src: z.string().min(1, {
@@ -152,7 +153,7 @@ export const CompanionForm = ({
                 <FormItem>
                   <FormLabel>Description</FormLabel>
                   <FormControl>
-                    <Input disabled={isLoading} placeholder="CEO & Founder of Tesla, SpaceX" {...field} />
+                    <Input disabled={isLoading} placeholder="Software Engineer at MySpace" {...field} />
                   </FormControl>
                   <FormDescription>
                     Short description for your AI Companion
