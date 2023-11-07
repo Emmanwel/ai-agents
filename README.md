@@ -5,11 +5,10 @@ stripe listen --forward-to localhost:3000/api/webhook
 npx prisma studio
 npm run dev
 
-pscale_pw_gFbSIAzXi34jBKFquo2vbGOGa1qbTPfiTWKPFehvRId
+1. npx prisma studio - run studio data
+2. node scripts/seed.ts -  seed the categories
+3. npx prisma migrate reset
 
-
-
-node scripts/seed.ts -- seed the categories
-npx prisma migrate reset
-npx prisma generate
-npx prisma db push
+= important
+4. npx prisma generate
+5. npx prisma db push

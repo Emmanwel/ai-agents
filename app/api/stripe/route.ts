@@ -43,10 +43,10 @@ export async function GET() {
           price_data: {
             currency: "USD",
             product_data: {
-              name: "Companion Pro",
+              name: "Prom Package ",
               description: "Create Custom AI Companions"
             },
-            unit_amount: 999,
+            unit_amount: 199,
             recurring: {
               interval: "month"
             }
